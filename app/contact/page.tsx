@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Linkedin, Instagram, Github } from "lucide-react";
 import ScrollReveal from "../components/ScrollReveal";
+import { supabase } from "../lib/supabase";
 
 interface FormData {
   name: string;
@@ -38,9 +39,23 @@ export default function ContactPage() {
     e.preventDefault();
     if (!validate()) return;
     setStatus("loading");
-    // Simulate form submission
-    await new Promise((res) => setTimeout(res, 1800));
-    setStatus("success");
+
+    try {
+      const { error } = await supabase.from("contacts").insert([
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+      ]);
+
+      if (error) throw error;
+      setStatus("success");
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      setStatus("error");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -219,54 +234,108 @@ export default function ContactPage() {
             <ScrollReveal delay={0.1}>
               <div className="glass-card" style={{ padding: "36px 32px" }}>
                 <AnimatePresence mode="wait">
-                  {status === "success" ? (
-                    <motion.div
-                      key="success"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        textAlign: "center",
-                        padding: "40px 0",
-                      }}
-                    >
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                        style={{
-                          width: 80,
-                          height: 80,
-                          borderRadius: "50%",
-                          background: "linear-gradient(135deg, #22c55e, #16a34a)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          marginBottom: 20,
-                          boxShadow: "0 12px 32px rgba(34,197,94,0.35)",
-                        }}
-                      >
-                        <CheckCircle size={36} color="white" strokeWidth={2.5} />
-                      </motion.div>
-                      <h3
-                        style={{
-                          fontFamily: "var(--font-josefin), sans-serif",
-                          fontWeight: 700,
-                          fontSize: "1.4rem",
-                          color: "var(--text-primary)",
-                          marginBottom: 8,
-                        }}
-                      >
-                        Message Sent! 🎉
-                      </h3>
-                      <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", maxWidth: 380 }}>
-                        Thank you for reaching out! I&apos;ll get back to you within 24 hours.
-                      </p>
-                    </motion.div>
-                  ) : (
+                      {status === "success" ? (
+                        <motion.div
+                          key="success"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            textAlign: "center",
+                            padding: "40px 0",
+                          }}
+                        >
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                            style={{
+                              width: 80,
+                              height: 80,
+                              borderRadius: "50%",
+                              background: "linear-gradient(135deg, #22c55e, #16a34a)",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              marginBottom: 20,
+                              boxShadow: "0 12px 32px rgba(34,197,94,0.35)",
+                            }}
+                          >
+                            <CheckCircle size={36} color="white" strokeWidth={2.5} />
+                          </motion.div>
+                          <h3
+                            style={{
+                              fontFamily: "var(--font-josefin), sans-serif",
+                              fontWeight: 700,
+                              fontSize: "1.4rem",
+                              color: "var(--text-primary)",
+                              marginBottom: 8,
+                            }}
+                          >
+                            Message Sent! 🎉
+                          </h3>
+                          <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", maxWidth: 380 }}>
+                            Thank you for reaching out! I&apos;ll get back to you within 24 hours.
+                          </p>
+                        </motion.div>
+                      ) : status === "error" ? (
+                        <motion.div
+                          key="error"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            textAlign: "center",
+                            padding: "40px 0",
+                          }}
+                        >
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                            style={{
+                              width: 80,
+                              height: 80,
+                              borderRadius: "50%",
+                              background: "linear-gradient(135deg, #ef4444, #dc2626)",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              marginBottom: 20,
+                              boxShadow: "0 12px 32px rgba(239,68,68,0.35)",
+                            }}
+                          >
+                            <AlertCircle size={36} color="white" strokeWidth={2.5} />
+                          </motion.div>
+                          <h3
+                            style={{
+                              fontFamily: "var(--font-josefin), sans-serif",
+                              fontWeight: 700,
+                              fontSize: "1.4rem",
+                              color: "var(--text-primary)",
+                              marginBottom: 8,
+                            }}
+                          >
+                            Oops! Something went wrong.
+                          </h3>
+                          <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", maxWidth: 380, marginBottom: 24 }}>
+                            Failed to send your message. Please try again or email me directly at hello@portfolio.dev.
+                          </p>
+                          <button
+                            onClick={() => setStatus("idle")}
+                            className="btn-secondary"
+                            style={{ padding: "10px 24px" }}
+                          >
+                            Try Again
+                          </button>
+                        </motion.div>
+                      ) : (
                     <motion.form key="form" onSubmit={handleSubmit} noValidate>
                       <h2
                         style={{
