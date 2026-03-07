@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "light" | "dark";
+type Theme = "dark";
 
 interface ThemeContextType {
   theme: Theme;
@@ -12,34 +12,20 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    
-    const initialTheme = savedTheme || systemTheme;
-    setTimeout(() => {
-      setTheme(initialTheme);
-      setMounted(true);
-    }, 0);
-    document.documentElement.setAttribute("data-theme", initialTheme);
+    // Always dark — clear any saved preference
+    localStorage.removeItem("theme");
+    document.documentElement.setAttribute("data-theme", "dark");
+    setMounted(true);
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
+  // toggleTheme is a no-op; kept so consumers don't break
+  const toggleTheme = () => {};
 
-  // Provide the context immediately to prevent "useTheme must be used within a ThemeProvider"
-  // but use the 'mounted' state inside consumer components if they need to avoid hydration mismatches.
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme: "dark", toggleTheme }}>
       <div style={{ visibility: mounted ? "visible" : "hidden" }}>
         {children}
       </div>

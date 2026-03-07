@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
@@ -21,7 +21,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  useTheme(); // keep context subscription; no values needed
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -87,10 +87,7 @@ export default function Navbar() {
                     height={34}
                     style={{
                       objectFit: "contain",
-                      filter:
-                        theme === "dark"
-                          ? "drop-shadow(0 0 4px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.4))"
-                          : "none",
+                      filter: "drop-shadow(0 0 4px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.4))",
                       transition: "filter 0.3s ease",
                     }}
                   />
@@ -150,26 +147,6 @@ export default function Navbar() {
 
           {/* Right: CTA & Mobile Hamburger */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 12 }}>
-            <button
-              onClick={toggleTheme}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: "50%",
-                background: scrolled ? "var(--glass-bg)" : "var(--glass-bg)",
-                border: "1px solid var(--glass-border)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--text-primary)",
-                cursor: "pointer",
-                backdropFilter: "blur(10px)",
-                transition: "all 0.3s ease",
-              }}
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
 
             <a
               href="https://wa.me/94771367326"

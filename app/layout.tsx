@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import GlobalProtection from "./components/GlobalProtection";
+import CircuitLines from "./components/CircuitLines";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
     <html lang="en" className={`${josefin.variable} ${lato.variable}`} suppressHydrationWarning>
       <body>
         <ThemeProvider>
+          <CircuitLines />
           <GlobalProtection />
           <Navbar />
           <main>{children}</main>
