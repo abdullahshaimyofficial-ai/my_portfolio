@@ -212,6 +212,64 @@ export default function HomePage() {
               style={{ display: "flex", justifyContent: "center" }}
             >
               <div style={{ position: "relative" }} className="animate-float">
+                {/* AI Circuits layer */}
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                  style={{
+                    position: "absolute",
+                    inset: -60,
+                    zIndex: -1,
+                    opacity: 0.7,
+                    pointerEvents: "none",
+                  }}
+                >
+                  <svg width="100%" height="100%" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="circuitGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="50%" stopColor="#8b5cf6" />
+                        <stop offset="100%" stopColor="#ec4899" />
+                      </linearGradient>
+                    </defs>
+                    <g stroke="url(#circuitGrad)" strokeWidth="2" fill="none">
+                      {/* Inner rings */}
+                      <circle cx="250" cy="250" r="200" strokeDasharray="4 8" opacity="0.4" />
+                      <circle cx="250" cy="250" r="230" strokeDasharray="20 40 10 30" opacity="0.6" />
+                      
+                      {/* Connecting traces */}
+                      <path d="M 250 20 L 250 50 L 270 70" />
+                      <circle cx="250" cy="20" r="4" fill="#3b82f6" />
+                      <path d="M 480 250 L 450 250 L 430 230" />
+                      <circle cx="480" cy="250" r="4" fill="#ec4899" />
+                      <path d="M 250 480 L 250 450 L 230 430" />
+                      <circle cx="250" cy="480" r="4" fill="#3b82f6" />
+                      <path d="M 20 250 L 50 250 L 70 270" />
+                      <circle cx="20" cy="250" r="4" fill="#8b5cf6" />
+                      
+                      {/* Diagonals */}
+                      <path d="M 87 87 L 115 115 L 140 115" />
+                      <circle cx="87" cy="87" r="4" fill="#ec4899" />
+                      <path d="M 413 87 L 385 115 L 360 115" />
+                      <circle cx="413" cy="87" r="4" fill="#3b82f6" />
+                      <path d="M 87 413 L 115 385 L 140 385" />
+                      <circle cx="87" cy="413" r="4" fill="#8b5cf6" />
+                      <path d="M 413 413 L 385 385 L 360 385" />
+                      <circle cx="413" cy="413" r="4" fill="#ec4899" />
+
+                      {/* Nodes */}
+                      <circle cx="270" cy="70" r="2" fill="none" />
+                      <circle cx="430" cy="230" r="2" fill="none" />
+                      <circle cx="230" cy="430" r="2" fill="none" />
+                      <circle cx="70" cy="270" r="2" fill="none" />
+                      <circle cx="140" cy="115" r="2" fill="none" />
+                      <circle cx="360" cy="115" r="2" fill="none" />
+                      <circle cx="140" cy="385" r="2" fill="none" />
+                      <circle cx="360" cy="385" r="2" fill="none" />
+                    </g>
+                  </svg>
+                </motion.div>
+
                 {/* Outer glow ring */}
                 <div
                   style={{

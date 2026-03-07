@@ -89,7 +89,7 @@ export default function Navbar() {
                       objectFit: "contain",
                       filter:
                         theme === "dark"
-                          ? "drop-shadow(0 0 8px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.8))"
+                          ? "drop-shadow(0 0 4px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.4))"
                           : "none",
                       transition: "filter 0.3s ease",
                     }}
