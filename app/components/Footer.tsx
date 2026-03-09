@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Instagram, Heart, Zap } from "lucide-react";
+import { Heart, Zap } from "lucide-react";
 
 const footerLinks = [
   { href: "/about", label: "About" },
@@ -12,9 +12,8 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { href: "#", icon: Linkedin, label: "LinkedIn" },
-  { href: "#", icon: Instagram, label: "Instagram" },
-  { href: "#", icon: Github, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/abdullahshaimy/", icon: "/icons/linkedin.png", label: "LinkedIn" },
+  { href: "https://www.behance.net/abdullahshaimy/", icon: "/icons/behance.png", label: "Behance" },
 ];
 
 export default function Footer() {
@@ -167,6 +166,7 @@ export default function Footer() {
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                     textDecoration: "none",
                   }}
+                  className="social-link-container"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = "var(--gradient-primary)";
                     e.currentTarget.style.color = "white";
@@ -182,7 +182,12 @@ export default function Footer() {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <Icon size={16} />
+                  <img 
+                    src={Icon} 
+                    alt={label} 
+                    className="social-icon-img"
+                    style={{ width: 18, height: 18 }}
+                  />
                 </a>
               ))}
             </div>

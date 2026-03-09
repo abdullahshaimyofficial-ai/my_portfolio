@@ -29,10 +29,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   return (
     <>
       <motion.header
@@ -138,6 +134,7 @@ export default function Navbar() {
                     borderRadius: "50px",
                     transition: "all 0.2s",
                   }}
+                  onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
@@ -152,17 +149,7 @@ export default function Navbar() {
               href="https://wa.me/94771367326"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                padding: "10px 20px",
-                fontSize: "0.85rem",
-                textDecoration: "none",
-                borderRadius: "50px",
-                boxShadow: "0 8px 20px rgba(139, 92, 246, 0.2)",
-              }}
+              className="btn-whatsapp-glass"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -231,6 +218,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`nav-link${isActive ? " active" : ""}`}
                   style={{ padding: "12px 8px", fontSize: "1rem" }}
+                  onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>

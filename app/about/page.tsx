@@ -17,7 +17,7 @@ export default function AboutPage() {
       {/* ─── Hero ─────────────────────────────────────────────── */}
       <section
         style={{
-          padding: "80px 24px",
+          padding: "80px 24px 20px",
           position: "relative",
           overflow: "hidden",
         }}
@@ -127,11 +127,11 @@ export default function AboutPage() {
                   <MapPin size={14} color="#8b5cf6" /> Sri Lanka 🇱🇰
                 </span>
                 <span style={{ display: "flex", alignItems: "center", gap: 6, color: "var(--text-muted)", fontSize: "0.9rem" }}>
-                  <Calendar size={14} color="#3b82f6" /> 4+ Years Experience
+                  <Calendar size={14} color="#3b82f6" /> 2+ Years Experience
                 </span>
               </div>
               <p style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.7, maxWidth: 560, marginBottom: 24 }}>
-                I&apos;m a passionate Graphic Designer and CEO from Sri Lanka, crafting intelligent and beautiful visual experiences for clients worldwide. I bridge the gap between creative storytelling and modern design to build identities that are both visually stunning and strategically effective.
+                I&apos;m a passionate Developer and Designer from Sri Lanka, crafting intelligent and beautiful digital experiences for clients worldwide. I bridge the gap between creative storytelling and modern engineering to build applications that are both visually stunning and technically robust.
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <a href="/cv.pdf" download className="btn-primary">
@@ -159,22 +159,22 @@ export default function AboutPage() {
           >
             {/* Left: Story */}
             <div>
-              <ScrollReveal>
-                <span className="section-badge">✦ My Story</span>
-                <h2
-                  style={{
-                    fontFamily: "var(--font-josefin), sans-serif",
-                    fontWeight: 700,
+    <ScrollReveal delay={0.2} direction="none">
+                 <span className="section-badge">✦ My Story</span>
+                 <h2
+                   style={{
+                     fontFamily: "var(--font-josefin), sans-serif",
+                     fontWeight: 700,
                     fontSize: "1.8rem",
                     color: "var(--text-primary)",
                     marginBottom: 16,
                   }}
                 >
-                  Crafting Visual Stories at the Intersection of Art & Strategy
+                  Crafting Digital Experiences at the Intersection of Code & Design
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   {[
-                    "My journey started with a deep curiosity for how visual language could empower brands to tell their stories and connect with their audience. Today, I combine strong creative skills with 4+ years of professional experience to build high-impact brand identities.",
+                    "My journey started with a deep curiosity for how visual language could empower brands to tell their stories and connect with their audience. Today, I combine strong creative skills with 2+ years of professional experience to build high-impact brand identities.",
                     "Based in Sri Lanka and working globally, I&apos;ve collaborated with startups and established businesses — delivering projects that make a lasting impression.",
                     "Whether it&apos;s a complex brand identity, a sleek packaging design, or a user-focused UI — I approach every project with strategic thinking, creative excellence, and meticulous attention to detail.",
                   ].map((para, i) => (
@@ -219,7 +219,7 @@ export default function AboutPage() {
 
             {/* Right: Skills */}
             <div>
-              <ScrollReveal delay={0.1}>
+              <ScrollReveal delay={0.1} direction="none">
                 <span className="section-badge">✦ Proficiency</span>
                 <h2
                   style={{

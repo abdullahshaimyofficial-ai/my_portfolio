@@ -20,13 +20,13 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah Shaimy | Graphic Designer & CEO",
+  title: "Abdullah Shaimy | Developer & Designer",
   description:
-    "Personal portfolio of Abdullah Shaimy, a Creative Graphic Designer and CEO from Sri Lanka — crafting high-impact visual identities and digital experiences.",
-  keywords: ["portfolio", "graphic designer", "CEO", "Sri Lanka", "UI/UX", "brand identity", "Abdullah Shaimy"],
+    "Personal portfolio of Abdullah Shaimy, a Developer and Designer from Sri Lanka — crafting high-performance web applications and elegant digital experiences.",
+  keywords: ["portfolio", "full-stack developer", "web development", "Next.js", "React", "UI/UX", "brand identity", "Abdullah Shaimy"],
   openGraph: {
-    title: "Abdullah Shaimy | Graphic Designer & CEO",
-    description: "Crafting High-Impact Visual Identities & Digital Experiences",
+    title: "Abdullah Shaimy | Developer & Designer",
+    description: "Crafting High-Performance Web Applications & Elegant Digital Experiences",
     type: "website",
   },
 };

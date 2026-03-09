@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, Linkedin, Instagram, Github } from "lucide-react";
+import { Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
 import ScrollReveal from "../components/ScrollReveal";
 import { supabase } from "../lib/supabase";
 
@@ -186,9 +186,8 @@ export default function ContactPage() {
                   </p>
                   <div style={{ display: "flex", gap: 10 }}>
                     {[
-                      { href: "#", icon: Linkedin, label: "LinkedIn" },
-                      { href: "#", icon: Instagram, label: "Instagram" },
-                      { href: "#", icon: Github, label: "GitHub" },
+                      { href: "https://www.linkedin.com/in/abdullahshaimy/", icon: "/icons/linkedin.png", label: "LinkedIn" },
+                      { href: "https://www.behance.net/abdullahshaimy/", icon: "/icons/behance.png", label: "Behance" },
                     ].map(({ href, icon: Icon, label }) => (
                       <a
                         key={label}
@@ -222,7 +221,12 @@ export default function ContactPage() {
                           e.currentTarget.style.transform = "none";
                         }}
                       >
-                        <Icon size={16} />
+                        <img 
+                          src={Icon} 
+                          alt={label} 
+                          className="social-icon-img"
+                          style={{ width: 18, height: 18 }}
+                        />
                       </a>
                     ))}
                   </div>

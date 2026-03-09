@@ -2,21 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Linkedin, Instagram, Github, ArrowRight, Eye } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
 import AnimatedText from "./components/AnimatedText";
 import ScrollReveal from "./components/ScrollReveal";
+import LiquidStats from "./components/LiquidStats";
 
 const socialLinks = [
-  { href: "https://www.linkedin.com/in/abdullahshaimy/", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://www.instagram.com/abdullahshaimy/", icon: Instagram, label: "Instagram" },
-  { href: "https://www.behance.net/abdullahshaimy", icon: Github, label: "Behance" },
-];
-
-const stats = [
-  { value: "50+", label: "Projects Managed" },
-  { value: "4+", label: "Years Experience" },
-  { value: "40+", label: "Happy Clients" },
-  { value: "100%", label: "Satisfaction Rate" },
+  { href: "https://www.linkedin.com/in/abdullahshaimy/", icon: "/icons/linkedin.png", label: "LinkedIn" },
+  { href: "https://www.behance.net/abdullahshaimy/", icon: "/icons/behance.png", label: "Behance" },
 ];
 
 export default function HomePage() {
@@ -131,7 +124,7 @@ export default function HomePage() {
                   maxWidth: 460,
                 }}
               >
-                CEO & Freelance Graphic Designer crafting <strong>Visually Engaging & User-Focused</strong> designs for global brands and startups.
+                A passionate <strong>Developer & Designer</strong> specialized in building <strong>High-Performance Web Applications</strong> with a focus on <strong>Exceptional User Experiences</strong> and <strong>Modern Aesthetics</strong>.
               </motion.p>
 
               {/* CTAs */}
@@ -183,6 +176,7 @@ export default function HomePage() {
                       textDecoration: "none",
                       boxShadow: "var(--shadow-sm)",
                     }}
+                    className="social-link-container"
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = "var(--gradient-primary)";
                       e.currentTarget.style.color = "white";
@@ -198,7 +192,12 @@ export default function HomePage() {
                       e.currentTarget.style.boxShadow = "var(--shadow-sm)";
                     }}
                   >
-                    <Icon size={15} />
+                    <img 
+                      src={Icon} 
+                      alt={label} 
+                      className="social-icon-img"
+                      style={{ width: 18, height: 18 }}
+                    />
                   </a>
                 ))}
               </motion.div>
@@ -331,8 +330,8 @@ export default function HomePage() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   style={{
                     position: "absolute",
-                    top: 40,
-                    right: -30,
+                    top: 30,
+                    right: -50,
                     background: "var(--glass-bg)",
                     backdropFilter: "blur(var(--glass-blur))",
                     borderRadius: 12,
@@ -348,7 +347,7 @@ export default function HomePage() {
                     zIndex: 10,
                   }}
                 >
-                  <span>🚀</span> Creative CEO
+                  <span>🚀</span> Developer
                 </motion.div>
 
                 <motion.div
@@ -373,7 +372,7 @@ export default function HomePage() {
                     zIndex: 10,
                   }}
                 >
-                  <span>🎨</span> Graphic Designer
+                  <span>🎨</span> Designer
                 </motion.div>
               </div>
             </motion.div>
@@ -383,57 +382,7 @@ export default function HomePage() {
 
       {/* ─── Stats Bar ─────────────────────────────────────────── */}
       <ScrollReveal>
-        <div
-          style={{
-            background: "var(--glass-bg)",
-            backdropFilter: "blur(var(--glass-blur))",
-            WebkitBackdropFilter: "blur(var(--glass-blur))",
-            borderTop: "1px solid var(--glass-border)",
-            borderBottom: "1px solid var(--glass-border)",
-            padding: "40px 24px",
-            boxShadow: "inset 0 1px 1px -1px var(--glass-highlight)",
-          }}
-        >
-          <div
-            style={{
-              maxWidth: 1200,
-              margin: "0 auto",
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: 24,
-              textAlign: "center",
-            }}
-            className="stats-grid"
-          >
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <p
-                  style={{
-                    fontFamily: "var(--font-josefin), sans-serif",
-                    fontWeight: 800,
-                    fontSize: "2rem",
-                    background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    marginBottom: 4,
-                  }}
-                >
-                  {stat.value}
-                </p>
-                <p style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <LiquidStats />
       </ScrollReveal>
 
       {/* ─── Featured Work Preview ─────────────────────────────── */}
@@ -597,7 +546,7 @@ export default function HomePage() {
                     fontSize: "1rem",
                   }}
                 >
-                  From full-stack web applications and AI integrations to brand identity and UI/UX design — I bring your digital vision to life.
+                  From full-stack web applications and graphics design to brand identity and UI/UX design — I bring your digital vision to life.
                 </p>
                 <Link href="/services" className="btn-primary">
                   Explore Services
@@ -614,7 +563,7 @@ export default function HomePage() {
               >
                 {[
                   { emoji: "💻", label: "Web Development" },
-                  { emoji: "🤖", label: "AI Integration" },
+                  { emoji: "✨", label: "Graphics Design" },
                   { emoji: "🎨", label: "UI/UX Design" },
                   { emoji: "🏷️", label: "Brand Identity" },
                 ].map((s) => (

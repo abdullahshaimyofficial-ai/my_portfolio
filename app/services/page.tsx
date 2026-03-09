@@ -49,7 +49,7 @@ export default function ServicesPage() {
             What I Offer
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: "1rem", maxWidth: 500, margin: "0 auto" }}>
-            From robust full-stack development to stunning visual design — I bring your digital vision to life.
+            From robust web development to stunning visual design — I bring your digital vision to life.
           </p>
         </motion.div>
       </section>

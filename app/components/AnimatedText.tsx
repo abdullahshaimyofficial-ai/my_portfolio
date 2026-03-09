@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const roles = ["Developer", "Designer", "Freelancer"];
+const roles = ["Learner", "Developer", "Designer", "Freelancer"];
 
 export default function AnimatedText() {
   const [index, setIndex] = useState(0);

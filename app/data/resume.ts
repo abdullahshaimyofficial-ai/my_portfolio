@@ -22,18 +22,18 @@ export interface Education {
 export const experiences: Experience[] = [
   {
     id: "1",
-    role: "CEO & Freelance Graphic Designer",
+    role: "Developer & Designer",
     company: "Abdullah Shaimy Visuals",
     location: "Sri Lanka (Remote)",
     duration: "2020 – Present",
     type: "Full-time",
     description:
-      "Leading a creative studio focused on providing high-impact visual design solutions for local and international brands.",
+      "Leading a creative studio focused on providing high-performance web applications and elegant UI/UX design solutions for global brands.",
     highlights: [
-      "Specialized in brand identity, packaging, and UI/UX design",
-      "Managed 50+ successful design projects with a 100% satisfaction rate",
-      "Crafted visually stunning and user-focused designs using Adobe Creative Suite",
-      "Built a strong online presence and reached global clients through social media",
+      "Specialized in Full-Stack Web Development, UI/UX design, and brand identity",
+      "Managed 50+ successful digital projects with a 100% satisfaction rate",
+      "Crafted visually stunning and user-focused web experiences using Next.js, React, and Adobe Creative Suite",
+      "Built a strong online presence and reached global clients through innovative digital solutions",
     ],
   },
   {
