@@ -30,7 +30,10 @@ export default function ContactPage() {
     if (!form.name.trim() || form.name.trim().length < 2) errs.name = "Name must be at least 2 characters.";
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) errs.email = "Please enter a valid email address.";
     if (!form.subject.trim() || form.subject.trim().length < 3) errs.subject = "Subject must be at least 3 characters.";
-    if (!form.message.trim() || form.message.trim().length < 20) errs.message = "Message must be at least 20 characters.";
+    
+    const wordCount = form.message.trim().split(/\s+/).filter(Boolean).length;
+    if (!form.message.trim() || wordCount < 10) errs.message = "Message must be at least 10 words.";
+    
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
