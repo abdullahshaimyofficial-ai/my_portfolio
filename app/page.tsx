@@ -124,7 +124,7 @@ export default function HomePage() {
                   maxWidth: 460,
                 }}
               >
-                A passionate <strong>Developer & Designer</strong> specialized in building <strong>High-Performance Web Applications</strong> with a focus on <strong>Exceptional User Experiences</strong> and <strong>Modern Aesthetics</strong>.
+                A <strong>Full-stack Developer and Graphic Designer</strong> behind <strong>NanoVext</strong>, crafting high-performance <strong>Next.js web applications</strong> with a minimalist, corporate aesthetic and seamless user experiences.
               </motion.p>
 
               {/* CTAs */}
@@ -546,7 +546,7 @@ export default function HomePage() {
                     fontSize: "1rem",
                   }}
                 >
-                  From full-stack web applications and graphics design to brand identity and UI/UX design — I bring your digital vision to life.
+                  From high-performance web apps to minimalist corporate branding—I deliver digital solutions through <strong>NanoVext</strong> that prioritize speed, aesthetics, and professional results.
                 </p>
                 <Link href="/services" className="btn-primary">
                   Explore Services
@@ -562,26 +562,52 @@ export default function HomePage() {
                 }}
               >
                 {[
-                  { emoji: "💻", label: "Web Development" },
-                  { emoji: "✨", label: "Graphics Design" },
-                  { emoji: "🎨", label: "UI/UX Design" },
-                  { emoji: "🏷️", label: "Brand Identity" },
+                  { 
+                    emoji: "💻", 
+                    label: "Web Development",
+                    desc: "High-performance Next.js & Python applications."
+                  },
+                  { 
+                    emoji: "✨", 
+                    label: "Graphics Design",
+                    desc: "Minimalist corporate visuals and Adobe-tier design."
+                  },
+                  { 
+                    emoji: "🎨", 
+                    label: "UI/UX Design",
+                    desc: "Clean, intuitive, and conversion-focused interfaces."
+                  },
+                  { 
+                    emoji: "🏷️", 
+                    label: "Brand Identity",
+                    desc: "Professional logos and cohesive visual systems."
+                  },
                 ].map((s) => (
                   <div
                     key={s.label}
                     className="glass-card"
-                    style={{ padding: "20px", textAlign: "center" }}
+                    style={{ padding: "20px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center" }}
                   >
                     <div style={{ fontSize: "2rem", marginBottom: 8 }}>{s.emoji}</div>
                     <p
                       style={{
                         fontFamily: "var(--font-josefin), sans-serif",
-                        fontWeight: 600,
-                        fontSize: "0.85rem",
+                        fontWeight: 700,
+                        fontSize: "0.9rem",
                         color: "var(--text-primary)",
+                        marginBottom: 4,
                       }}
                     >
                       {s.label}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "0.75rem",
+                        color: "var(--text-secondary)",
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {s.desc}
                     </p>
                   </div>
                 ))}

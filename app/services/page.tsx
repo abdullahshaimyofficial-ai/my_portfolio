@@ -86,7 +86,7 @@ export default function ServicesPage() {
                 </h2>
               </div>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", marginLeft: 48 }}>
-                Fast, scalable, and beautiful web applications built with modern technology.
+                Building the digital backbone of your business with high-performance code and scalable architecture.
               </p>
             </div>
           </ScrollReveal>
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                 </h2>
               </div>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", marginLeft: 48 }}>
-                Beautiful, user-centered design that converts and delights.
+                Transforming corporate visions into minimalist, high-impact visual identities.
               </p>
             </div>
           </ScrollReveal>

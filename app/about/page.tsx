@@ -131,7 +131,7 @@ export default function AboutPage() {
                 </span>
               </div>
               <p style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.7, maxWidth: 560, marginBottom: 24 }}>
-                I&apos;m a passionate Developer and Designer from Sri Lanka, crafting intelligent and beautiful digital experiences for clients worldwide. I bridge the gap between creative storytelling and modern engineering to build applications that are both visually stunning and technically robust.
+                I am a <strong>Full-stack Developer and Graphic Designer</strong> with 2+ years of experience. From completing the <strong>Hifz of Al-Quran</strong> to studying at the <strong>University of Moratuwa</strong>, my work is driven by discipline and technical precision. Through my brand, <strong>NanoVext</strong>, I build high-performance <strong>Next.js applications</strong> and minimalist corporate designs that help businesses stand out.
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <a href="/cv.pdf" download className="btn-primary">
@@ -170,13 +170,13 @@ export default function AboutPage() {
                     marginBottom: 16,
                   }}
                 >
-                  Crafting Digital Experiences at the Intersection of Code & Design
+                  Crafting Digital Excellence through NanoVext
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   {[
-                    "My journey started with a deep curiosity for how visual language could empower brands to tell their stories and connect with their audience. Today, I combine strong creative skills with 2+ years of professional experience to build high-impact brand identities.",
-                    "Based in Sri Lanka and working globally, I&apos;ve collaborated with startups and established businesses — delivering projects that make a lasting impression.",
-                    "Whether it&apos;s a complex brand identity, a sleek packaging design, or a user-focused UI — I approach every project with strategic thinking, creative excellence, and meticulous attention to detail.",
+                    "My journey began with a focus on discipline and precision—qualities I honed while completing the Hifz of Al-Quran. Today, I channel that same dedication into <strong>NanoVext</strong>, where I bridge the gap between technical engineering and corporate aesthetics.",
+                    "Based in Sri Lanka and working with clients globally, I am currently expanding my technical expertise through the <strong>University of Moratuwa</strong>. My goal is to build high-performance web applications that don't just work perfectly but look exceptional.",
+                    "Whether it’s a full-stack Next.js platform or a minimalist corporate identity, I approach every project with strategic thinking and a commitment to professional, clean results.",
                   ].map((para, i) => (
                     <p
                       key={i}
@@ -289,7 +289,7 @@ export default function AboutPage() {
                     marginTop: 24,
                   }}
                 >
-                  Tools &amp; AI
+                  Tools &amp; Specialties
                 </h4>
                 {toolSkills.map((skill, i) => (
                   <SkillBar key={skill.name} name={skill.name} level={skill.level} delay={i * 0.08} />
@@ -332,9 +332,9 @@ export default function AboutPage() {
             className="values-grid"
           >
             {[
-              { emoji: "⚡", title: "Efficiency", desc: "Fast, performant, and optimized digital products that deliver value quickly." },
-              { emoji: "🎯", title: "Precision", desc: "Meticulous attention to detail in both logic and aesthetics — quality without compromise." },
-              { emoji: "✨", title: "Innovation", desc: "Leveraging cutting-edge tech (AI, modern frameworks) to solve complex problems elegantly." },
+              { emoji: "⚡", title: "Efficiency", desc: "Developing high-performance, SEO-optimized web applications that ensure fast load times and a seamless user experience across all devices." },
+              { emoji: "🎯", title: "Precision", desc: "A meticulous approach to both clean code and minimalist design—ensuring every pixel and every line of logic serves a professional purpose." },
+              { emoji: "✨", title: "Innovation", desc: "Integrating modern frameworks like Next.js and Python-driven logic to build scalable, future-proof digital solutions for the corporate world." },
             ].map((v, i) => (
               <ScrollReveal key={v.title} delay={i * 0.15}>
                 <div className="glass-card" style={{ padding: "28px", textAlign: "center" }}>

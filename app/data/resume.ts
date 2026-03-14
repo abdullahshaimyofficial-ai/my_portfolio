@@ -22,34 +22,17 @@ export interface Education {
 export const experiences: Experience[] = [
   {
     id: "1",
-    role: "Developer & Designer",
-    company: "Abdullah Shaimy Visuals",
-    location: "Sri Lanka (Remote)",
-    duration: "2020 – Present",
-    type: "Full-time",
+    role: "Lead Developer & Designer",
+    company: "NanoVext",
+    location: "Global (Remote)",
+    duration: "2024 – Present",
+    type: "Freelance / Founder",
     description:
-      "Leading a creative studio focused on providing high-performance web applications and elegant UI/UX design solutions for global brands.",
+      "Leading a digital brand focused on high-performance web applications and corporate minimalist design for global and local clients.",
     highlights: [
-      "Specialized in Full-Stack Web Development, UI/UX design, and brand identity",
-      "Managed 50+ successful digital projects with a 100% satisfaction rate",
-      "Crafted visually stunning and user-focused web experiences using Next.js, React, and Adobe Creative Suite",
-      "Built a strong online presence and reached global clients through innovative digital solutions",
-    ],
-  },
-  {
-    id: "2",
-    role: "Freelance Graphic Designer",
-    company: "Grapzy International",
-    location: "Sri Lanka (Remote)",
-    duration: "2021 – 2023",
-    type: "Freelance",
-    description:
-      "Collaborated with a global creative agency to deliver high-quality branding and marketing materials.",
-    highlights: [
-      "Developed comprehensive brand identities for international startups",
-      "Designed marketing assets for Awarding Ceremonies and Promotional Events",
-      "Worked closely with clients to translate their vision into effective visual communication",
-      "Optimized design workflows using Illustrator and Photoshop",
+      "Specialized in Full-Stack development using Next.js and Python",
+      "Crafting clean, professional brand identities using the Adobe Creative Suite",
+      "Delivering end-to-end digital solutions from UI/UX design to final deployment",
     ],
   },
 ];
@@ -57,41 +40,65 @@ export const experiences: Experience[] = [
 export const education: Education[] = [
   {
     id: "1",
-    degree: "Adobe Certified Professional (Photoshop & Illustrator)",
-    institution: "Adobe",
-    location: "Global",
-    duration: "2023",
+    degree: "Python for Full-stack Development",
+    institution: "University of Moratuwa, Sri Lanka",
+    location: "Sri Lanka",
+    duration: "2026 – Present",
     description:
-      "Official certification from Adobe validating professional-level expertise in design industry standards.",
+      "Mastering back-end logic, data structures, and the integration of Python into modern full-stack frameworks.",
     achievements: [
-      "Mastery in digital image manipulation and vector illustration",
-      "Certified in visual communication and graphic design principles",
+      "Advanced back-end engineering",
+      "Full-stack integration systems",
     ],
   },
   {
     id: "2",
-    degree: "UI/UX Design Fundamentals",
-    institution: "Professional Certificate",
-    location: "Online",
-    duration: "2024",
+    degree: "GCE Advanced Level (Batch of 2027)",
+    institution: "KM/KM/AL-ASHRAQ M.M.V (National School)",
+    location: "Sri Lanka",
+    duration: "2025 – Present",
     description:
-      "Intensive course focusing on user-centered design, wireframing, and interactive prototyping in Figma.",
+      "Currently pursuing secondary higher education with a focus on future technical expertise.",
     achievements: [
-      "Built several high-fidelity mobile and web UI prototypes",
-      "Deep understanding of user psychological barriers and interface accessibility",
+      "Focus on Science/Tech stream",
     ],
   },
   {
     id: "3",
-    degree: "Creative Branding & Identity Design",
-    institution: "Professional Certificate",
-    location: "Online",
-    duration: "2024",
+    degree: "Diploma in Graphics Design",
+    institution: "Studyz Academy Pvt Ltd",
+    location: "Sri Lanka",
+    duration: "Completed Jan 2026",
     description:
-      "Specialization in crafting cohesive brand stories and memorable identities for various market segments.",
+      "Advanced training in visual communication, typography, and professional brand identity systems using Adobe tools.",
     achievements: [
-      "Developed end-to-end brand guidelines for diverse industries",
-      "Expertise in color theory, typography, and brand emotional impact",
+      "Expertise in Adobe Creative Suite",
+      "Visual Communication mastery",
+    ],
+  },
+  {
+    id: "4",
+    degree: "GCE Ordinary Level",
+    institution: "Km/Ak/Al-Hamra Maha Vidyalaya (National School)",
+    location: "Sri Lanka",
+    duration: "2025",
+    description:
+      "Successfully completed secondary education with strong results (3A, 2B, 4C), laying the foundation for technical and creative studies.",
+    achievements: [
+      "Strong academic foundation",
+    ],
+  },
+  {
+    id: "5",
+    degree: "Hifz Al-Quran Completion",
+    institution: "Institute of Da'wa Islamiyya",
+    location: "Sri Lanka",
+    duration: "2019 – 2021",
+    description:
+      "Fully memorized the Al-Quran, a 2-year journey that developed profound discipline, focus, and attention to detail.",
+    achievements: [
+      "Complete memorization",
+      "Exceptional discipline & focus",
     ],
   },
 ];

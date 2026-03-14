@@ -134,8 +134,8 @@ export default function ContactPage() {
               </ScrollReveal>
 
               {[
-                { icon: Mail, label: "Email", value: "hello@portfolio.dev", color: "#3b82f6" },
-                { icon: MapPin, label: "Location", value: "Sri Lanka 🇱🇰 · Available Worldwide", color: "#8b5cf6" },
+                { icon: Mail, label: "Email", value: "abdullahshaimyofficial@gmail.com", color: "#3b82f6" },
+                { icon: MapPin, label: "Location", value: "Sri Lanka 🇱🇰 • Available Worldwide", color: "#8b5cf6" },
                 { icon: Clock, label: "Response Time", value: "Within 24 hours", color: "#ec4899" },
               ].map(({ icon: Icon, label, value, color }, i) => (
                 <ScrollReveal key={label} delay={i * 0.1}>
@@ -332,7 +332,7 @@ export default function ContactPage() {
                             Oops! Something went wrong.
                           </h3>
                           <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", maxWidth: 380, marginBottom: 24 }}>
-                            Failed to send your message. Please try again or email me directly at hello@portfolio.dev.
+                            Failed to send your message. Please try again or email me directly at abdullahshaimyofficial@gmail.com.
                           </p>
                           <button
                             onClick={() => setStatus("idle")}
